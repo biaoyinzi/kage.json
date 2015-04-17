@@ -1,0 +1,25 @@
+{
+  "name": "kage.json",
+  "version": "0.0.1",
+  "description": "parse KAGE format to JSON for future use",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/g0v/kage.json.git"
+  },
+  "keywords": [
+    "KAGE",
+    "font",
+    "IDS",
+    "IDC"
+  ],
+  "author": "caasi Huang",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/g0v/kage.json/issues"
+  },
+  "homepage": "https://github.com/g0v/kage.json"
+}
