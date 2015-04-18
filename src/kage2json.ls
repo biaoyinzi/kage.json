@@ -1,5 +1,6 @@
 #!/usr/bin/env lsc
 require! {
+  'prelude-ls': { is-type }
 }
 
 running-as-script = not module.parent
@@ -49,12 +50,12 @@ const tail-type = do
   '7': do # vert slash
     '7': 'slash-left'
 
-parser = ->
+parse = ->
+  return [] unless is-type \String it
   parts = it.split /\$|\s/
   body = []
   for part in parts
     [type, head, tail, x0, y0, x1, y1, x2, y2, x3, y3] = part.split ':'
-    console.log typeof type
     switch +type
     | 99
       body.push do
@@ -100,6 +101,6 @@ if running-as-script
   process.stdin
     ..setEncoding \utf8
     ..on \data -> chars += it
-    ..on \end  -> console.log JSON.stringify(parser(chars), null, 2)
+    ..on \end  -> console.log JSON.stringify(parse(chars), null, 2)
 else
-  module.exports = { parser }
+  module.exports = { parse }
