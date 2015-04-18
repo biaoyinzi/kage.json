@@ -1,6 +1,5 @@
 #!/usr/bin/env lsc
 require! {
-  'fs'
   'path'
   'split'
   '../../src/utils': { parseLine }
@@ -17,7 +16,6 @@ client.on 'error' -> console.log it
 
 glyph-count = 0
 count = 0
-#table = {}
 
 jsonPath = path.resolve config.rootPath, 'json'
 if not fs.existsSync jsonPath
@@ -41,17 +39,12 @@ fs.createReadStream path.resolve config.rootPath, 'data', 'dump_newest_only.txt'
       client.quit!
       return console.log \done
 
-    { id }:glyph = parseLine line
+    { id, raw }:glyph = parseLine line
+    delete glyph.raw
 
     if not id then return
 
-    filePath = path.resolve config.rootPath, 'json', "#id.json"
-    client.set "#{id}", line.split('|').2.trim!
+    client.set "#{id}", raw
     client.set "#{id}.json", (JSON.stringify glyph)
-    fs.exists filePath, (exists) ->
-      if not exists
-        fs.writeFile do
-          filePath
-          JSON.stringify glyph,, 2
 
     ++count

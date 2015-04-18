@@ -17,18 +17,15 @@
     "IDC"
   ],
   "author": "caasi Huang",
+  "contributors": [
+    "Yuan Hsiang Cheng <lyforever62@hotmail.com>"
+  ],
   "license": "CC0-1.0",
   "bugs": {
     "url": "https://github.com/g0v/kage.json/issues"
   },
   "homepage": "https://github.com/g0v/kage.json",
   "dependencies": {
-    "express": "^4.12.3",
-    "prelude-ls": "^1.1.1",
-    "redis": "^0.12.1",
-    "split": "^0.3.3"
-  },
-  "devDependencies": {
-    "tarball-extract": "0.0.3"
+    "prelude-ls": "^1.1.1"
   }
 }

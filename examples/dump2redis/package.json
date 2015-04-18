@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "devDependencies": {
+    "split": "^0.3.3",
+    "tarball-extract": "0.0.3"
+  },
+  "dependencies": {
+    "express": "^4.12.3",
+    "redis": "^0.12.1"
+  }
+}
